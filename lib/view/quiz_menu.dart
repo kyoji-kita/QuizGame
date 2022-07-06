@@ -28,7 +28,7 @@ class QuizMenu extends StatelessWidget{
             List<Widget>children=[];
             if (snapshot.hasData){
               snapshot.data?.forEach((element) {
-                children.add(_quizMenu('id', 'title', context));
+                children.add(_quizMenu(element['question'], element['answer'], context));
               });
             }
             return ListView(

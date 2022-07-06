@@ -6,7 +6,7 @@ class AllApp extends StatelessWidget{
   late List<Map> quizList;
 
 Future<void> goToQuizApp(BuildContext context) async {
-  quizList = shuffle(await getCsvData('assets/quiz1.csv'));
+  quizList = shuffle(await getCsvData('assets/1.csv'));
   for (Map row in quizList) {
     debugPrint(row["question"]);
   }

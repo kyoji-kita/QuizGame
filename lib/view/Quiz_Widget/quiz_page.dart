@@ -2,9 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice/view/Quiz_Widget/result_page.dart';
 
+import '../../service/load_csv.dart';
+
 class QuizPage extends StatefulWidget {
-  QuizPage(this.quizList, {Key? key}) : super(key: key);
-  List<Map> quizList;
+  const QuizPage({
+    Key? key,
+    required this.quizList,
+}) :super(key: key);
+
+  final List<Map> quizList;
 
   @override
   State<QuizPage> createState() => QuizPageState();

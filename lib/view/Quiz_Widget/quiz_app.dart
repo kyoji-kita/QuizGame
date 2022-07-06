@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:practice/view/Quiz_Widget/quiz_page.dart';
 import 'package:practice/view/Quiz_Widget/result_page.dart';
 
+import '../../service/load_csv.dart';
+
 class QuizApp extends StatelessWidget {
   const QuizApp({
     Key? key,
@@ -17,6 +19,13 @@ class QuizApp extends StatelessWidget {
     //idに紐づいたクイズを取得する
     await Future.delayed(const Duration(seconds: 1));
     return [];
+
+  }
+
+  Future<void> goToQuizPage(BuildContext context)async{
+    final quizList = await getCsvList('assets/$id.csv');
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => QuizPage(quizList: quizList)));
   }
 
   @override
@@ -25,14 +34,19 @@ class QuizApp extends StatelessWidget {
       appBar: AppBar(
         title: Text('title'),
       ),
-      body: FutureBuilder<List>(
-          future: loadQuiz(id),
-          builder: (context, snapshot) {
-            //クイズ表示
-            return ListView();
-          }
+      body: Center(
+      child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+      ElevatedButton(
+      onPressed: (){
+      goToQuizPage(context);//クイズアプリへ遷移するQuizApp関数が呼ばれる
+      },
+      child: const Text('スタート')
       ),
-
+      ],
+      ),
+      ),
     );
   }
 }

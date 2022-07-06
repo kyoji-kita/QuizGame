@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class QuizData {
-  late String id;
-  late String title;
+   String id;
+  String title;
 
   Map<String, dynamic> toMap() {
     return {
