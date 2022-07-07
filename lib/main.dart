@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 void main(){
   runApp(const MyApp());
 }
-
+//MyAppを立ち上げて、FirstPageに飛ばす
 class MyApp extends StatelessWidget{
   const MyApp({Key? key}) : super(key: key);
   @override
