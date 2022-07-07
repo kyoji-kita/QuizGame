@@ -1,10 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:practice/view/Quiz_Widget/quiz_app.dart';
 
 import '../service/load_csv.dart';
 
+//getCSVでクイズのdataを取ってきている
 class QuizMenu extends StatelessWidget{
   const QuizMenu({Key? key}):super(key:key);
   Future<List<Map>>loadQuiz() async{
@@ -16,6 +15,7 @@ class QuizMenu extends StatelessWidget{
     return getCsvData('assets/QuizList.csv');
   }
 
+  //loadQuizで取ってきたdataをリストビュー表示にしている
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -39,7 +39,7 @@ class QuizMenu extends StatelessWidget{
   }
 }
 
-
+//idとtitleを次のQuizAppに渡している
 Future<void> goToQuizMenu(
     String id,
     String title,
