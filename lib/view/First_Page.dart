@@ -12,7 +12,7 @@ class FirstPage extends StatelessWidget{
  }
 
 
-
+//最初のページの画面を作成　ボタンを押すと次のQuizMenuへ遷移
   @override
   Widget build(BuildContext context){
     return Scaffold(
