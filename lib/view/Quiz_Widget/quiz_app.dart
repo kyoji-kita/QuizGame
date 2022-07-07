@@ -5,6 +5,7 @@ import 'package:practice/view/Quiz_Widget/result_page.dart';
 
 import '../../service/load_csv.dart';
 
+//QuizMenuで指定されたid,titleを受け取っている
 class QuizApp extends StatelessWidget {
   const QuizApp({
     Key? key,
@@ -22,12 +23,14 @@ class QuizApp extends StatelessWidget {
 
   }
 
+  //受け取ったidのcsvの問題を表示
   Future<void> goToQuizPage(BuildContext context)async{
     final quizList = await getCsvList('assets/$id.csv');
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => QuizPage(quizList: quizList)));
   }
 
+  //QuizAppの画面　スタートボタンのみ
   @override
   Widget build(BuildContext context) {
     return Scaffold(
